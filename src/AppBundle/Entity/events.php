@@ -24,7 +24,7 @@ class events
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=40)
+     * @ORM\Column(name="name", type="string", length=100)
      */
     private $name;
 
@@ -87,7 +87,7 @@ class events
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=40)
+     * @ORM\Column(name="city", type="string", length=30)
      */
     private $city;
 
@@ -101,7 +101,7 @@ class events
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=40)
+     * @ORM\Column(name="type", type="string", length=100)
      */
     private $type;
 
