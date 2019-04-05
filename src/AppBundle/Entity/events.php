@@ -29,16 +29,31 @@ class events
     private $name;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="frequency", type="string", length=40, nullable=true)
+     */
+    private $frequency;
+
+    /**
+     * @var \Date
+     *
+     * @ORM\Column(name="date", type="date", nullable=true)
      */
     private $date;
 
     /**
+     * @var \Time
+     *
+     * @ORM\Column(name="time", type="time", nullable=true)
+     */
+    private $time;
+
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=2000)
      */
     private $description;
 
@@ -73,7 +88,14 @@ class events
     /**
      * @var string
      *
-     * @ORM\Column(name="street", type="string", length=60)
+     * @ORM\Column(name="place", type="string", length=60)
+     */
+    private $place;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="street", type="string", length=60, nullable=true)
      */
     private $street;
 
@@ -87,14 +109,21 @@ class events
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=30)
+     * @ORM\Column(name="city", type="string", length=60)
      */
     private $city;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="link", type="integer")
+     * @ORM\Column(name="country", type="string", length=60)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string")
      */
     private $link;
 
@@ -141,9 +170,33 @@ class events
     }
 
     /**
+     * Set frequency.
+     *
+     * @param string $frequency
+     *
+     * @return events
+     */
+    public function setFrequency($frequency)
+    {
+        $this->frequency = $frequency;
+
+        return $this;
+    }
+
+    /**
+     * Get frequency.
+     *
+     * @return string
+     */
+    public function getFrequency()
+    {
+        return $this->frequency;
+    }
+
+    /**
      * Set date.
      *
-     * @param \DateTime $date
+     * @param \Date $date
      *
      * @return events
      */
@@ -157,13 +210,37 @@ class events
     /**
      * Get date.
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDate()
     {
         return $this->date;
     }
 
+        /**
+     * Set time.
+     *
+     * @param \Time $time
+     *
+     * @return events
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get time.
+     *
+     * @return \Time
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+    
     /**
      * Set description.
      *
@@ -284,6 +361,30 @@ class events
         return $this->phone;
     }
 
+     /**
+     * Set place.
+     *
+     * @param string $place
+     *
+     * @return events
+     */
+    public function setPlace($place)
+    {
+        $this->place = $place;
+
+        return $this;
+    }
+
+    /**
+     * Get place.
+     *
+     * @return string
+     */
+    public function getPlace()
+    {
+        return $this->place;
+    }
+
     /**
      * Set street.
      *
@@ -347,6 +448,31 @@ class events
     }
 
     /**
+     * Set country.
+     *
+     * @param string $country
+     *
+     * @return events
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country.
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+
+    /**
      * Get city.
      *
      * @return string
@@ -354,6 +480,30 @@ class events
     public function getCity()
     {
         return $this->city;
+    }
+
+    /**
+     * Set link.
+     *
+     * @param string $link
+     *
+     * @return events
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link.
+     *
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
     }
 
     /**
