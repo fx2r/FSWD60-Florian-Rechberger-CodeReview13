@@ -86,7 +86,7 @@ class EventController extends Controller
       )
     )
     ->add('link', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
-    ->add('save', SubmitType::class, array('label'=> 'Create Event', 'attr' => array('class'=> 'btn btn-primary mt-3', 'style'=>'margin-bottom:15px')))
+    ->add('save', SubmitType::class, array('label'=> 'Create Event', 'attr' => array('class'=> 'btn btn-primary mt-4', 'style'=>'margin-bottom:15px')))
     ->getForm();
        $form->handleRequest($request);
 

@@ -21,14 +21,13 @@
 	<div class="card-columns">	
 		{% for event in events %}
 		<div class="card">
-			<img class="card-img-top" src="{{event.image}}" alt="Event image">
+			<a href="{{event.image}}"><img class="card-img-top" src="{{event.image}}" alt="Event image"></a>
 			<div class="card-body">
-				<h5 class="card-title">{{event.name}}</h5>
+				<a href="/details/{{event.id}}" style="color:inherit; cursor:pointer; text-decoration:none;"><h5 class="card-title">{{event.name}}</h5></a>
 				<p class="card-text">{{event.description[:80] ~ (event.description|length > 80 ? '...') }}</p>
 				<hr>
 				<p class="card-text">{{event.frequency}}</p>
 				<p class="card-text">{{event.date|date('F j, Y')}}</p>
-				<p class="card-text">{{event.time|date('g:i a')}}</p>
 			</div>
 			<div class="card-footer">
 				<a href="{{event.link}}"><small class="text-muted"><i class="fas fa-globe mr-2"></i>{{event.link}}</small></a>
@@ -39,9 +38,7 @@
 				<br>
 				<small class="text-muted"><i class="fas fa-at mr-2"></i>{{event.email}}</small>
 				<br>
-				<a href="/details/{{event.id}}" class="btn btn-success mt-3 mb-2">View</a>
-				<a href="/edit/{{event.id}}" class="btn btn-info mt-3 mb-2">Edit</a>
-				<a href="/delete/{{event.id}}" class="btn btn-danger mt-3 mb-2">Delete</a> 
+				<a href="/details/{{event.id}}" class="btn btn-secondary mt-3 mb-2">View</a>
 			</div>
 		</div>
 		{% endfor %}
