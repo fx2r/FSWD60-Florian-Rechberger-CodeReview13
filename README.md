@@ -1,5 +1,5 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-THE MYSQL DB 'cr13_florian_rechberger_bigevents.sql' IT TO BE FOUND IN THE ROOT DIRECTORY
+THE MYSQL DB 'cr13_florian_rechberger_bigevents.sql' IS TO BE FOUND IN THE ROOT DIRECTORY OF THIS REPOSITORY
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
