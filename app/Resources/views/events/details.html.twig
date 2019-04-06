@@ -7,7 +7,7 @@
 			<h5 class="card-title">{{events.name}}</h5>
 			<p class="card-text">{{events.description}}</p>
 			<hr>
-			<ul>
+			<ul style="list-style: none">
 				<li class="card-text">{{events.frequency}}</li>
 				<li class="card-text">{{events.date|date('F j, Y')}}</li>
 				<li class="card-text">{{events.time|date('g:i a')}}</li>
@@ -16,7 +16,7 @@
 			<hr>
 			<ul style="list-style: none">
 				<li>{{events.street}}</li>
-				
+				<li>{{events.postalCode}}</li>
 				<li>{{events.city}}</li>
 				<li>{{events.country}}</li>
 			</ul>
