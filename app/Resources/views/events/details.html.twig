@@ -1,4 +1,31 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	DETAILS 
+	<div class="card">
+<!-- Don't fully understand why I need to use eventS. indead of event. -->
+		<img class="card-img-top" src="{{events.image}}" alt="Event image">
+		<div class="card-body">
+			<h5 class="card-title">{{events.name}}</h5>
+			<p class="card-text">{{events.description}}</p>
+			<hr>
+			<ul>
+				<li class="card-text">{{events.frequency}}</li>
+				<li class="card-text">{{events.date|date('F j, Y')}}</li>
+				<li class="card-text">{{events.time|date('g:i a')}}</li><li>
+			</ul>
+			
+		</div>
+		<div class="card-footer">
+			<a href="{{events.link}}"><small class="text-muted"><i class="fas fa-globe mr-2"></i>{{events.link}}</small></a>
+			<br>
+			<small class="text-muted"><i class="fas fa-map-marker mr-2 mt-3"></i>{{events.place}}</small>
+			<br>
+			<small class="text-muted"><i class="fas fa-phone mr-2 my-3"></i>{{events.phone}}</small>
+			<br>
+			<small class="text-muted"><i class="fas fa-at mr-2"></i>{{events.email}}</small>
+			<br>
+			<a class="btn btn-secondary mt-3 mb-2" href="/">Back to All Events</a>
+			<a href="/event/edit/1/{{events.id}}" class="btn btn-info mt-3 mb-2">Edit</a>
+			<a href="/event/delete/1/{{events.id}}" class="btn btn-danger mt-3 mb-2">Delete</a> 
+		</div>
+	</div> 
 {% endblock %}

@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
+    <!-- messages are shown in session -->
+    {% for flash_message in app.session.flashbag.get('notice')%}
+        <div class="alert alert-success">{{flash_message}} </div>
+    {% endfor %}
+    <!-- error message - when error - don't put blockbody twice!! -->
+    {% for flash_message in app.session.flashbag.get('error')%}
+    <div class="alert alert-danger">{{flash_message}} </div>
+    {% endfor %}
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">

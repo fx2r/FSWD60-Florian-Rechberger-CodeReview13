@@ -1,4 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	EDIT    
+	<div class="d-flex flex-column justify-content-center align-items-center mt-4">
+		<h2 class="page-header">Edit Event</h2>
+		<div class="form-group bg-lightyello col-md-8 col-lg-6">
+			{{form_start(form)}}
+			{{form_widget(form)}}
+			{{form_end(form)}}
+		</div>
+	</div>    
 {% endblock %}
