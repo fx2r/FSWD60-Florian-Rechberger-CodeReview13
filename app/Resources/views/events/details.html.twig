@@ -10,9 +10,16 @@
 			<ul>
 				<li class="card-text">{{events.frequency}}</li>
 				<li class="card-text">{{events.date|date('F j, Y')}}</li>
-				<li class="card-text">{{events.time|date('g:i a')}}</li><li>
+				<li class="card-text">{{events.time|date('g:i a')}}</li>
+				<li class="card-text">Capacity: {{events.capacity}}</li>
 			</ul>
-			
+			<hr>
+			<ul style="list-style: none">
+				<li>{{events.street}}</li>
+				
+				<li>{{events.city}}</li>
+				<li>{{events.country}}</li>
+			</ul>
 		</div>
 		<div class="card-footer">
 			<a href="{{events.link}}"><small class="text-muted"><i class="fas fa-globe mr-2"></i>{{events.link}}</small></a>
