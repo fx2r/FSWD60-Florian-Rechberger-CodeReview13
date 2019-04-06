@@ -1,3 +1,8 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+THE MYSQL DB 'cr13_florian_rechberger_bigevents.sql' IT TO BE FOUND IN THE ROOT DIRECTORY
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 Symfony Standard Edition
 ========================
 

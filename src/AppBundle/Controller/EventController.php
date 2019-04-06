@@ -77,7 +77,8 @@ class EventController extends Controller
         'Theatre'=>'Theatre',
         'Cultural Exchange'=>'Cultural Exchange',
         'Travel'=>'Travel',
-        'Charity'=>'Charity'
+        'Charity'=>'Charity',
+        'Lifestyle'=>'Lifestyle'
         ),
         'attr' => array(
         'class'=>'form-control', 'style'=>'margin-botton:15px'
@@ -220,7 +221,8 @@ class EventController extends Controller
         'Theatre'=>'Theatre',
         'Cultural Exchange'=>'Cultural Exchange',
         'Travel'=>'Travel',
-        'Charity'=>'Charity'
+        'Charity'=>'Charity',
+        'Lifestyle'=>'Lifestyle'
         ),
         'attr' => array(
         'class'=>'form-control', 'style'=>'margin-botton:15px'
