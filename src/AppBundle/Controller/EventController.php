@@ -151,7 +151,7 @@ class EventController extends Controller
   }
 
   /**
-    * @Route("/edit/{id}", name="event_edit")
+    * @Route("event/edit/{id}", name="event_edit")
     */
   public function editAction($id, Request $request)
   {
