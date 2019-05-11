@@ -2,6 +2,11 @@
 THE MYSQL DB 'cr13_florian_rechberger_bigevents.sql' IS TO BE FOUND IN THE ROOT DIRECTORY OF THIS REPOSITORY
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+#####To-dos#####
+#search function
+#secure input validation
+#clicked image should not overflow the screen with possibility to enlarge when clicking on it
+
 
 Symfony Standard Edition
 ========================
