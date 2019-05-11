@@ -30,32 +30,33 @@ class EventController extends Controller
   */
   public function createAction(Request $request)
   {   
+    $error = false;
     $event = new events;
     $form = $this->createFormBuilder($event)
 
     ->add('name', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
-    ->add('frequency', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('frequency', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px', 'required'=> false)))
 
-    ->add('date', DateType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+    ->add('date', DateType::class, array('widget' => 'single_text', 'label'=> 'Date me!', 'attr' => array('style'=>'margin-bottom:15px; display:block;')))
 
     ->add('time', TimeType::class, array('attr' => array('style'=>'margin-bottom:15px')))
 
     ->add('description', TextareaType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
-    ->add('image', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('image', TextType::class, array('label'=> 'Image location', 'attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
     ->add('capacity', NumberType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
     ->add('email', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))    
 
-    ->add('phone', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('phone', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px', 'required'=> false)))
 
     ->add('place', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
-    ->add('street', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('street', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px', 'required'=> false)))
 
-    ->add('postal_code', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('postal_code', TextType::class, array('label'=> 'Postal Code', 'attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
     ->add('city', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
@@ -110,6 +111,12 @@ class EventController extends Controller
       $link         = $form['link']->getData();
       $type         = $form['type']->getData();
 
+      if(empty($name)){
+        $error = true;
+        $nameError = "please type your name";
+      }
+
+
       //function from our entities, each columns has set function to wich we assign the attained value from the form
       $event->setName($name);
       $event->setFrequency($frequency);
@@ -147,7 +154,7 @@ class EventController extends Controller
   public function detailsAction($id)
   {
     $event = $this->getDoctrine()->getRepository('AppBundle:events')->find($id);
-    return $this->render('events/details.html.twig', array('events' => $event));
+    return $this->render('events/details.html.twig', array('event' => $event));
   }
 
   /**
@@ -179,27 +186,27 @@ class EventController extends Controller
 
     ->add('name', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
-    ->add('frequency', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('frequency', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px', 'required'=> false)))
 
-    ->add('date', DateType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+    ->add('date', DateType::class, array('widget' => 'single_text', 'label'=> 'Date me!', 'attr' => array('style'=>'margin-bottom:15px; display:block;')))
 
     ->add('time', TimeType::class, array('attr' => array('style'=>'margin-bottom:15px')))
 
     ->add('description', TextareaType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
-    ->add('image', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('image', TextType::class, array('label'=> 'Image location', 'attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
     ->add('capacity', NumberType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
     ->add('email', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))    
 
-    ->add('phone', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('phone', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px', 'required'=> false)))
 
     ->add('place', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
-    ->add('street', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('street', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px', 'required'=> false)))
 
-    ->add('postal_code', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+    ->add('postal_code', TextType::class, array('label'=> 'Postal Code', 'attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
     ->add('city', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
 
@@ -278,7 +285,7 @@ class EventController extends Controller
       $em->flush();
       $this->addFlash(
               'notice',
-              'Event Added'
+              'Event editted'
               );
       return $this->redirectToRoute('event_list');
     }
